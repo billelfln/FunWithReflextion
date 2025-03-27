@@ -2,7 +2,7 @@
 
 namespace FunWithReflextion.Models
 {
-    [TableName("People")]
+    [TableName("Peoples")]
     public class People : BaseModel<People>
     {
         public int Id { get; set; }

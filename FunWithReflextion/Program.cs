@@ -9,7 +9,7 @@ namespace FunWithReflextion
         static void Main(string[] args)
         {
             DataTable usersTable = User.All();
-            DataTable peopleTable = People.All();
+            //DataTable peopleTable = People.All();
 
             Console.WriteLine("Users:");
             foreach (DataRow row in usersTable.Rows)
@@ -21,14 +21,34 @@ namespace FunWithReflextion
                 Console.WriteLine($"ID: {id}, Name: {name}, Email: {email}");
             }
 
-            Console.WriteLine("\nPeople:");
-            foreach (DataRow row in peopleTable.Rows)
+            //Console.WriteLine("\nPeople:");
+            //foreach (DataRow row in peopleTable.Rows)
+            //{
+            //    int id = (int)row["Id"];
+            //    string name = (string)row["Name"];
+            //    string email = (string)row["Email"];
+            //    string phone = (string)row["Phone"];
+            //    Console.WriteLine($"ID: {id}, Name: {name}, Email: {email}, Phone: {phone}");
+            //}
+
+            User newUser = new User
+            {
+                Id = 12,
+                Name = "soso",
+                Email = "soso@example.com"
+            };
+            User.Add(newUser);
+
+            usersTable = User.All();
+
+            Console.WriteLine("Users After added New User:");
+            foreach (DataRow row in usersTable.Rows)
             {
                 int id = (int)row["Id"];
                 string name = (string)row["Name"];
                 string email = (string)row["Email"];
-                string phone = (string)row["Phone"];
-                Console.WriteLine($"ID: {id}, Name: {name}, Email: {email}, Phone: {phone}");
+
+                Console.WriteLine($"ID: {id}, Name: {name}, Email: {email}");
             }
         }
     }
