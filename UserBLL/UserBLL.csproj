@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\TableNameAttribute.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\People.cs" />
     <Compile Include="Models\User.cs" />

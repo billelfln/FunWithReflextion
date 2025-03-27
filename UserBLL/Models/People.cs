@@ -1,5 +1,8 @@
-﻿namespace FunWithReflextion.Models
+﻿using FunWithReflextion.Attributes;
+
+namespace FunWithReflextion.Models
 {
+    [TableName("People")]
     public class People : BaseModel<People>
     {
         public int Id { get; set; }
